@@ -2,9 +2,13 @@ import React from "react";
 
 // Square is a reusable presentational component.
 // It only receives data and callbacks from parent components via props.
-function Square({ value, onClick }) {
+// isWinningSquare lets the UI add a special glowing style after a player wins.
+function Square({ value, onClick, isWinningSquare }) {
   return (
-    <button className="square" onClick={onClick}>
+    <button
+      className={isWinningSquare ? "square winning-square" : "square"}
+      onClick={onClick}
+    >
       {value}
     </button>
   );
